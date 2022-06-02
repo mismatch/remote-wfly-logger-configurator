@@ -1,0 +1,4 @@
+set logger=${logger}
+set level=${level}
+
+/subsystem=logging/logger=$logger:add(handlers=["LOGSTASH-ASYNC"], level=$level)

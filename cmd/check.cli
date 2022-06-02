@@ -1,0 +1,3 @@
+set logger=${logger}
+
+/subsystem=logging/logger=$logger:read-resource
