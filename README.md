@@ -8,4 +8,5 @@ There are cases when you want to add some logger category on the fly on a remote
 - then execute lengthy command (you are lucky if you remember all details)
 - do with logs what you need
 - repeat first 3 steps to remove added logger category
+
 It's boring and error-prone activity that deters your investigations. No more :)
