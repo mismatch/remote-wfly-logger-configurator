@@ -9,6 +9,8 @@ prepare() {
 	cp "cfg/$2.properties" "${pkg_dir}/config.properties"
 	cp "scripts/cli.sh" "${pkg_dir}/cli.sh"
 	cp "scripts/init.sh" "${pkg_dir}/init.sh"
+	local docker_name=$(grep "^$3.wfly.docker" configurator.properties | cut -d '=' -f2)
+	sed -i "s/DOCKER_NAME/${docker_name}/g" "${pkg_dir}/init.sh"
 	tar --exclude='init.sh' -cf $pkg_dir.tar $pkg_dir/ 
 }
 
@@ -27,7 +29,7 @@ case $1 in
 		ls cmd | cut -f1 -d '.'
 		;;
 	*)
-		prepare $1 $2
+		prepare $1 $2 $3
 
 		host_file="hosts/$3"
 		if [ -f "$host_file" ]; then
