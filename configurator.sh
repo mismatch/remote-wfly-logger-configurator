@@ -40,11 +40,10 @@ case $1 in
 			for line in "${lines[@]}"
 			do
 				echo "Applying to $line"
-				#apply $line
+				apply $line
 			done
 		else
-			echo "Test"
-			#apply $3
+			apply $3
 		fi
 		;;
 esac
